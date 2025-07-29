@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <div className="max-w-5xl mx-auto space-y-8">
       <div className="flex flex-col text-center font-[var(--font-sora)]">
-        <h1 className="text-8xl font-bold bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent">
+        <h1 className="text-8xl font-bold bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent animate-pulse">
           Edit Images. Instantly. Beautifully.
         </h1>
         <p className="mt-8 text-retouchly-muted text-3xl font-[var(--font-inter)]">

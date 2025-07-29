@@ -13,6 +13,8 @@ import { usePathname } from "next/navigation";
 import useStoreUserEffect from "@/hooks/use-store-user";
 import BarLoader from "react-spinners/BarLoader";
 import { Authenticated, Unauthenticated } from "convex/react";
+import Link from "next/link";
+import { LayoutDashboard } from "lucide-react";
 
 export default function Header() {
   const path = usePathname();
@@ -45,9 +47,9 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <div className="relative">
+      <div className="flex items-center gap-4">
         <Unauthenticated>
-          <SignInButton className="text-white mr-4">Login</SignInButton>
+          <SignInButton className="text-white">Login</SignInButton>
           <SignUpButton>
             <Button className="bg-[#EC4899]/80 rounded-full font-semibold text-lg text-white hover:bg-[#EC4899]/90 px-4 py-4 transition-colors cursor-pointer">
               Register
@@ -55,10 +57,16 @@ export default function Header() {
           </SignUpButton>
         </Unauthenticated>
         <Authenticated>
+          <Link href="/dashboard">
+            <Button className="bg-[#EC4899]/80 rounded-lg font-semibold ">
+              <LayoutDashboard className="h-4 w-4" />
+              <span className="hidden md:flex">Dashboard</span>
+            </Button>
+          </Link>
           <UserButton
             appearance={{
               elements: {
-                avatarBox: "bg-[#A855F7]/20 rounded-full w-[50px]",
+                avatarBox: "!bg-[#A855F7]/20 !rounded-full !size-8",
               },
             }}
           />
